@@ -523,9 +523,9 @@ def class_specific_res(val_loader, model, criterion, args):
     return top1.avg
 
 def save_checkpoint(state, is_best,args, filename='_checkpoint.pth.tar'):
-    torch.save(state, args.size+'/'+args.arch+filename)
+    torch.save(state, str(args.size)+'/'+args.arch+filename)
     if is_best:
-        shutil.copyfile(args.size+'/'+args.arch+filename, args.size+'/'+args.arch+'_model_best.pth.tar')
+        shutil.copyfile(str(args.size)+'/'+args.arch+filename, args.size+'/'+args.arch+'_model_best.pth.tar')
 
 class AverageMeter(object):
     """Computes and stores the average and current value"""
