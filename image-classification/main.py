@@ -523,7 +523,7 @@ def class_specific_res(val_loader, model, criterion, args):
     return top1.avg
 
 def save_checkpoint(state, is_best,args, filename='_checkpoint.pth.tar'):
-    torch.save(state,'/kaggle/working'+ str(args.size)+'/'+args.arch+filename)
+    torch.save(state,'/kaggle/working/'+ str(args.size)+'/'+args.arch+filename)
     if is_best:
         shutil.copyfile('/kaggle/working/' + str(args.size)+'/'+args.arch+filename,'/kaggle/working/' + str(args.size) +'/'+args.arch+'_model_best.pth.tar')
 
